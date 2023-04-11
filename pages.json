@@ -1,0 +1,177 @@
+{
+	"tabBar": {
+	  "color": "#000000",
+	  "selectedColor": "#fa2209",
+	  "borderStyle": "black",
+	  "backgroundColor": "#ffffff",
+	  "list": [{
+	    "pagePath": "pages/index/index",
+	    "iconPath": "static/tabbar/home.png",
+	    "selectedIconPath": "static/tabbar/home-active.png",
+	    "text": "首页"
+	  }, {
+	    "pagePath": "pages/category/category",
+	    "iconPath": "static/tabbar/cate.png",
+	    "selectedIconPath": "static/tabbar/cate-active.png",
+	    "text": "分类"
+	  }, {
+	    "pagePath": "pages/cart/cart",
+	    "iconPath": "static/tabbar/cart.png",
+	    "selectedIconPath": "static/tabbar/cart-active.png",
+	    "text": "购物车"
+	  }, {
+	    "pagePath": "pages/user/user",
+	    "iconPath": "static/tabbar/user.png",
+	    "selectedIconPath": "static/tabbar/user-active.png",
+	    "text": "我的"
+	  }]
+	},
+	"pages": [
+		//pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+		  "path": "pages/index/index",
+		  "style": {
+			 "navigationBarTitleText": "萤火小程序商城",
+			"enablePullDownRefresh": true,
+			"navigationBarBackgroundColor": "#F9D7E1",
+			"navigationBarTextStyle": "white"
+		  }
+		}
+	    ,{
+            "path" : "pages/category/category",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "全部分类",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        , {
+      "path": "pages/cart/cart",
+      "style": {
+        "navigationBarTitleText": "购物车"
+      }
+    },
+    {
+      "path": "pages/user/user",
+      "style": {
+        "navigationBarTitleText": "个人中心",
+        "enablePullDownRefresh": true,
+        "navigationStyle": "custom"
+      }
+    }
+    ],
+	// 分包
+	"subPackages": [
+		{
+			"root": "subpackages",
+				"pages": [  
+	            {
+                    "path" : "search/search",
+                    "style" :    
+                {
+                    "navigationBarTitleText": "搜索",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
+                ,{
+                    "path" : "login/login",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "授权登录",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
+                ,{
+                    "path" : "shopList/shopList",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "商品列表",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
+                ,{
+                    "path" : "shopXq/shopXq",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "商品详情",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
+                ,{
+                    "path" : "Order/Order",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "我的订单",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
+               
+                ,{
+                    "path" :"OrderDef/OrderDef",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "订单详情",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
+                ,{
+                    "path" : "Confirm/Confirm",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "订单确认",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
+                ,{
+                    "path" : "address/address",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "收货地址",
+                    "enablePullDownRefresh": false
+                }
+                
+                },{
+                    "path" : "addressAdd/addressAdd",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
+            ]
+		}
+	],// 分包预载配置
+		"preloadRule": {
+			// 当我们进入了pages/index/index页面以后就会预下载pages/subPack分包
+			"pages/index/index": {
+				"network": "all",	//在指定网络下预下载，可选值为：all（不限网络）、wifi（仅wifi下预下载）
+				"packages": ["subpackages"]	//进入页面后预下载分包
+			}
+		},
+  "globalStyle": {
+    // #ifdef H5
+    // "navigationStyle": "custom",
+    "maxWidth": 750,
+    "rpxCalcMaxDeviceWidth": 750, // rpx 计算所支持的最大设备宽度，单位 px，默认值为 960
+    "rpxCalcBaseDeviceWidth": 560, // rpx 计算使用的基准设备宽度，设备实际宽度超出 rpx 计算所支持的最大设备宽度时将按基准宽度计算，单位 px，默认值为 375
+    "rpxCalcIncludeWidth": 9999, // rpx 计算特殊处理的值，始终按实际的设备宽度计算，单位 rpx，默认值为 750
+    // #endif
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "black",
+    "backgroundTextStyle": "dark"
+  },
+	"uniIdRouter": {},
+	"easycom": {
+			"^u-(.*)": "@/uview-ui/components/u-$1/u-$1.vue"
+		}
+}

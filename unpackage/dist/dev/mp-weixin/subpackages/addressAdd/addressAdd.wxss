@@ -1,0 +1,38 @@
+
+page {
+	font-size: 30rpx;
+}
+.address {
+	width: 100%;
+	background-color: #f3f3f3;
+	text-align: center;
+}
+.ss {
+	background-color: #fff;
+	width: 100%;
+	border-top: 1px solid #f3f3f3;
+	/* height: 80rpx; */
+	padding: 35rpx;
+	overflow: hidden;
+	box-sizing: border-box;
+	text-align: left;
+}
+.ss text {
+	float: left;
+	width: 130rpx;
+}
+.inp {
+	width: 70%;
+	display: inline-block;
+	padding: 0rpx 2rpx 2rpx 60rpx;
+}
+.ff {
+	margin-top: 30rpx;
+}
+.btna {
+	margin-top: 30rpx;
+	width: 95%;
+	background-color: #FF495E;
+	color: #fff;
+}
+

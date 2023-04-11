@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "picker-address": "/subpackages/addressAdd/pickerAddress"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "萤火小程序商城",
+  "enablePullDownRefresh": true,
+  "navigationBarBackgroundColor": "#F9D7E1",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "u-search": "/uview-ui/components/u-search/u-search",
+    "u-swiper": "/uview-ui/components/u-swiper/u-swiper"
+  }
+}
