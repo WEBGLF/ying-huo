@@ -187,7 +187,8 @@ var _default = {
 
   onHide: function onHide() {},
   globalData: {
-    tabbarIndex: 0
+    tabbarIndex: 0,
+    token: ''
   }
 };
 exports.default = _default;

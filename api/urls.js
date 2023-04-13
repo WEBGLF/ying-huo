@@ -1,11 +1,11 @@
 let ip;
+const app = getApp();
 // #ifdef H5
  ip = '/api';
 // #endif
 // #ifndef H5
  ip = 'http://43.143.190.87:8081/';
 // #endif
-
 const baseUrl = ip+'index.php?s=/api/';
 const login =uni.getStorageSync('login');
 let userInfo='&wxapp_id=10021&token=';

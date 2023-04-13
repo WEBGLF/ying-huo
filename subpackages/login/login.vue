@@ -77,10 +77,10 @@
 				}).then(res => {
 				
 					// 记录token user_id 登录成功
-					uni.$emit('gettoken',res.data.data.token);
+					uni.setStorageSync('login', true);
 					uni.setStorageSync('token', res.data.data.token);
 					uni.setStorageSync('user_id', res.data.data.user_id);
-						uni.setStorageSync('login', true);
+					uni.$emit('gettoken',res.data.data.token);
 						uni.switchTab({
 							url:'/pages/user/user'
 						})

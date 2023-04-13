@@ -1,29 +1,44 @@
 // params 请求的内容
 //header 请求头 get/GET  请求方式 "content-type:json" toUpperCase()
 //header 请求头 post/POST  请求方式 "content-type:multipart/form-data " toUpperCase()
- function getDatas(params){
-   return new Promise((resolve,reject)=>{
-  uni.showLoading({
-  	title: '加载中',
-	mask:true
-  });
-     uni.request({
-         method:"GET",
+function getDatas(params) {
+  return new Promise((resolve, reject) => {
+    uni.showLoading({
+      title: '加载中',
+      mask: true
+    });
+    uni.request({
+      method: "GET",
       ...params,
       header: {
-        'content-type': params.methed?.toUpperCase()=="GET"? "application/json; charset=utf-8" :"application/x-www-form-urlencoded; charset=utf-8"
+        'content-type': params.methed?.toUpperCase() == "GET" ? "application/json; charset=utf-8" : "application/x-www-form-urlencoded; charset=utf-8"
       },
-      success:(res)=>{
+
+      success: (res) => {
         resolve(res)
       },
-      fail:(err)=>{
+      fail: (err) => {
         reject(err)
       },
-      complete:()=>{
-       uni.hideLoading();
+      complete: () => {
+        uni.hideLoading();
       }
-     })
-   })
+    });
+
+    uni.addInterceptor('request', {
+      invoke(args) {
+        // request 触发前拼接 url 
+        if (args.method == "GET") {
+          args.url = args.url + "&wxapp_id=10021" + '&token=' + uni.getStorageSync('token') || ""
+        } else {
+          args.data.token = uni.getStorageSync('token') || ""
+          args.data.wxapp_id = 10021
+        }
+
+      },
+    })
+
+  })
 }
 async function netWork(args) {
   if (args instanceof Array) {//args为数组 - 说明做多次网络请求
@@ -35,6 +50,7 @@ async function netWork(args) {
     }
     return results;//返回数组
   } else {//args为对象 - 一次请求
+
     return await getDatas(args);
   }
 }

@@ -101,7 +101,7 @@ var components
 try {
   components = {
     uButton: function () {
-      return __webpack_require__.e(/*! import() | uview-ui/components/u-button/u-button */ "uview-ui/components/u-button/u-button").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-button/u-button.vue */ 178))
+      return __webpack_require__.e(/*! import() | uview-ui/components/u-button/u-button */ "uview-ui/components/u-button/u-button").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-button/u-button.vue */ 186))
     },
   }
 } catch (e) {
@@ -242,10 +242,10 @@ var _default = {
         }
       }).then(function (res) {
         // 记录token user_id 登录成功
-        uni.$emit('gettoken', res.data.data.token);
+        uni.setStorageSync('login', true);
         uni.setStorageSync('token', res.data.data.token);
         uni.setStorageSync('user_id', res.data.data.user_id);
-        uni.setStorageSync('login', true);
+        uni.$emit('gettoken', res.data.data.token);
         uni.switchTab({
           url: '/pages/user/user'
         });

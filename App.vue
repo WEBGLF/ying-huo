@@ -53,7 +53,8 @@
 
 		},
 		globalData: {
-			tabbarIndex:0
+			tabbarIndex:0,
+			token:'',
 		},
 
 	}

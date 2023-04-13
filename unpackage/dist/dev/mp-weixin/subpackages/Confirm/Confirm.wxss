@@ -71,7 +71,8 @@
   overflow: hidden;
   position: relative;
 }
-.box-list .checkout_list .order-shop .dis-flex .left .order-shop-left.data-v-0253d09e, .box-list .checkout_list .order-shop .dis-flex .left .order-shop-left image.data-v-0253d09e {
+.box-list .checkout_list .order-shop .dis-flex .left .order-shop-left.data-v-0253d09e,
+.box-list .checkout_list .order-shop .dis-flex .left .order-shop-left image.data-v-0253d09e {
   width: 160rpx;
   height: 160rpx;
   margin-right: 15rpx;
